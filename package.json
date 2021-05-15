@@ -1,0 +1,13 @@
+{
+  "name": "canvas-gears",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "esbuild src/index.ts --bundle --outfile=public/index.js",
+    "watch": "esbuild src/index.ts --bundle --outfile=public/index.js --watch"
+  },
+  "dependencies": {
+    "esbuild": "^0.11.20",
+    "typescript": "^4.0.2"
+  }
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+        <title>Canvas Gears</title>
+        <meta name="description" content="GLXGears rendered in software using canvas paths">
+        <style>
+            * {
+                margin: 0;
+            }
+            html {
+                height: 100%;
+            }
+            body {
+                height: 100%;
+                background-color: black;
+            }
+            canvas {
+                display: block;
+                height: 100%;
+                width: 100%;
+            }
+            #fps {
+                position: absolute;
+                margin: 10px;
+                color: white;
+                font-family: monospace;
+                font-size: large;
+            }
+            #github {
+                position: absolute;
+                margin: 10px;
+                top: 0;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="fps"></div>
+        <a id="github" href="https://github.com/jdudy/canvas-gears">
+            <img src="github.png">
+        </a>
+        <canvas></canvas>
+        <script src="index.js"></script>
+    </body>
+</html>
