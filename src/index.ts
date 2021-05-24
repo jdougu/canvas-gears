@@ -24,12 +24,19 @@ let wireframe: boolean = false;
 
 let pointerPosition: [number, number] | undefined;
 
+let numberOfGears = 1;
+
 function makeScene(theta: number) {
-    let scene = [
-        ...gear1.map((face) => transformFace(face, multiply(translate(-3, -2, 0), rotateAboutZ(theta),))),
-        ...gear2.map((face) => transformFace(face, multiply(translate(3.1, -2, 0), rotateAboutZ(-2 * theta - 9),))),
-        ...gear3.map((face) => transformFace(face, multiply(translate(-3.1, 4.2, 0), rotateAboutZ(-2 * theta - 25),))),
-    ];
+
+    let scene: Face[] = [];
+
+    for (let i = 0; i < numberOfGears; i++) {
+        scene.push(...[
+            ...gear1.map((face) => transformFace(face, multiply(translate(-3, -2, i * -3), rotateAboutZ(theta),))),
+            ...gear2.map((face) => transformFace(face, multiply(translate(3.1, -2, i * -3), rotateAboutZ(-2 * theta - 9),))),
+            ...gear3.map((face) => transformFace(face, multiply(translate(-3.1, 4.2, i * -3), rotateAboutZ(-2 * theta - 25),))),
+        ]);
+    }
 
     const a = multiplyAll(
         projectionMatrix,
@@ -147,6 +154,14 @@ function handleKeyDown(ev: KeyboardEvent) {
             break;
         case 'w':
             wireframe = !wireframe;
+            break;
+        case '=':
+            numberOfGears++;
+            break;
+        case '-':
+            if (numberOfGears > 1) {
+                numberOfGears--;
+            }
             break;
     }
 }
