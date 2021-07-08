@@ -2,7 +2,7 @@
 
 ## GLXGears rendered in software using canvas paths.
 
-[Live demo](https://jdudy.github.io/canvas-gears/)
+[Live demo](https://jdougu.github.io/canvas-gears/)
 
 Rotate by dragging mouse or arrow keys, w toggles wireframe, = and - to
 increase or decrease the number of gear sets to render.
